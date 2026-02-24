@@ -1,28 +1,26 @@
 # Autonomous Multi-Agent Research Assistant 🧠
+[![CI Pipeline - Docker Build Test](https://github.com/Mujeeb6/ai-research-agent/actions/workflows/docker-build.yml/badge.svg)](https://github.com/Mujeeb6/ai-research-agent/actions)
 
-An intelligent Retrieval-Augmented Generation (RAG) backend built with FastAPI, LangChain, and Pinecone. 
+A production-ready Retrieval-Augmented Generation (RAG) backend API built to serve a Llama 3.1 model. This project emphasizes MLOps best practices, featuring Docker containerization, automated CI/CD testing via GitHub Actions, structured system logging, and a highly scalable FastAPI microservice.
 
 ## 🚀 Overview
-This project orchestrates a generative AI agent capable of semantic search, document understanding, and information retrieval. It ingests complex PDF documents (such as academic research papers), vectorizes the content, and allows users to query the AI for highly accurate, context-aware answers through a RESTful API.
+This project orchestrates a generative AI agent capable of semantic search and document understanding. It ingests complex PDF documents, vectorizes the content, and allows users to query the AI for highly accurate, context-aware answers through a monitored RESTful API.
 
 ## 🛠️ Tech Stack
-* **Framework:** FastAPI (RESTful API orchestration)
+* **MLOps & Infrastructure:** Docker, GitHub Actions (CI/CD), Python `logging`
+* **API Framework:** FastAPI, Uvicorn
 * **AI/Agent Architecture:** LangChain, Groq (Llama 3.1)
-* **Vector Database:** Pinecone (Semantic search & Information Retrieval)
-* **Embeddings:** HuggingFace (`all-MiniLM-L6-v2`)
+* **Vector Database & Search:** Pinecone, HuggingFace Embeddings (`all-MiniLM-L6-v2`)
 
-## ⚙️ How It Works
-1. **Ingestion Pipeline (`ingest.py`):** Uses `PyPDFLoader` and `RecursiveCharacterTextSplitter` to chunk unstructured text into manageable pieces.
-2. **Vectorization:** Converts text chunks into 384-dimensional embeddings and upserts them to a Serverless Pinecone index.
-3. **Retrieval & Generation (`main.py`):** A FastAPI endpoint (`POST /ask`) queries the vector store, fetches the top 3 most relevant paragraphs, and passes them to the LLM to generate a deterministic, grounded response.
+## ⚙️ System Workflow
+1. **Data Ingestion Pipeline (`ingest.py`):** Automatically chunks unstructured text from PDFs, generates 384-dimensional embeddings, and upserts them to a Serverless Pinecone index.
+2. **Inference & Serving (`main.py`):** A FastAPI endpoint (`POST /ask`) queries the vector store, fetches the top 3 most relevant context windows, and passes them to the LLM to generate a grounded response.
+3. **Monitoring & Logging:** All system operations, incoming API requests, and model inference steps are tracked using structured Python logging to ensure reliability and easy error tracing.
+4. **CI/CD:** GitHub Actions automatically tests the Docker image build process on every push to the `main` branch.
 
-## 💻 Running Locally
-1. Clone the repository and navigate to the project directory.
-2. Create a virtual environment and install dependencies:
-   `pip install -r requirements.txt`
-3. Add your Groq and Pinecone API keys to the environment variables.
-4. Run the ingestion script to populate the vector database:
-   `python ingest.py`
-5. Start the FastAPI server:
-   `uvicorn main:app --reload`
-6. Navigate to `http://127.0.0.1:8000/docs` to test the API via the Swagger UI.
+## 💻 Running Locally (Docker)
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPO.git](https://github.com/YOUR_USERNAME/YOUR_REPO.git)
+cd YOUR_REPO

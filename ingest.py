@@ -5,7 +5,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_pinecone import PineconeVectorStore
 
 # 1. Set your Pinecone API Key
-os.environ["PINECONE_API_KEY"] = "PINECONE_API_KEY"
+os.environ["PINECONE_API_KEY"] = "pcsk_34TJQx_M4XoxdxBhkEHF7geBPoJhmkby7xgoRoZ5yGhTdrGHhcq2GdL6RdV91j661fu8RN"
 
 def build_memory():
     print("1. Reading the PDF...")

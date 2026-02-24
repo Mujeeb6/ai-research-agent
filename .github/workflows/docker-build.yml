@@ -26,6 +26,7 @@ jobs:
       with:
         context: .
         push: false # We are just testing the build, not pushing it to a registry yet
+        load: true 
         tags: research-agent-api:latest
 
     # 4. Run a quick check to see if the image exists

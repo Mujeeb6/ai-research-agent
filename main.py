@@ -17,8 +17,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Set your secret API keys
-os.environ["GROQ_API_KEY"] = "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" 
-os.environ["PINECONE_API_KEY"] = "pcsk_34TJQx_M4XoxdxBhkEHF7geBPoJhmkby7xgoRoZ5yGhTdrGHhcq2GdL6RdV91j661fu8RN"
+os.environ["GROQ_API_KEY"] = "PINECONE_API_KEY" 
+os.environ["PINECONE_API_KEY"] = "PINECONE_API_KEY"
 
 app = FastAPI(title="AI Research Agent API")
 

@@ -22,5 +22,5 @@ This project orchestrates a generative AI agent capable of semantic search and d
 
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPO.git](https://github.com/YOUR_USERNAME/YOUR_REPO.git)
-cd YOUR_REPO
+git clone [https://github.com/Mujeeb6/ai-research-agent.git](https://github.com/Mujeeb6/ai-research-agent.git)
+cd ai-research-agent
